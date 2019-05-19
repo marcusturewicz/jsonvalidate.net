@@ -1,0 +1,43 @@
+@using Newtonsoft.Json
+
+<div>
+    <label for="text">Enter JSON</label>
+    <textarea class="form-control" id="text" rows="10" bind="@Input"></textarea>
+    <button class="btn btn-primary" onclick="@ValidateInput">Validate</button>
+    <button class="btn btn-secondary" onclick="@Clear">Clear</button>
+    @if (IsError)
+    {
+        <div class="alert alert-danger" role="alert">
+            @Message
+        </div>
+    }
+    else if (!string.IsNullOrEmpty(Message)) {
+        <div class="alert alert-success" role="alert">
+            @Message
+        </div>
+    }
+</div>
+
+@functions {
+    string Input { get; set; }
+    bool IsError { get; set; }
+    string Message { get;set; }
+
+    void ValidateInput() {
+        try {
+            var json = JsonConvert.DeserializeObject(Input);
+            IsError = false;
+            Message = "JSON valid!";
+        }
+        catch (Exception e) {
+            IsError = true;
+            Message = e.Message;
+        }
+    }
+
+    void Clear() {
+        Input = string.Empty;
+        IsError = false;
+        Message = string.Empty;
+    }
+}
