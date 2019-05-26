@@ -1,0 +1,52 @@
+trigger:
+- master
+
+pr:
+  autoCancel: true
+  branches:
+    include:
+    - 'master'
+  paths:
+    exclude:
+    - README.md
+
+jobs:
+- job: blazor_app
+  displayName: Blazor App
+  timeoutInMinutes: 15
+  workspace:
+    clean: all
+  strategy:
+      maxParallel: 1
+  pool:
+      vmImage: ubuntu-16.04
+  variables:
+    buildConfiguration: 'Release'
+    restoreBuildProjects: '**/*.csproj'
+    testProjects: '**/*Test.csproj'
+    dotnetSDK: 3.0.100-preview5-011568
+  steps:
+  - checkout: self
+    clean: true
+  - task: DotNetCoreInstaller@0
+    displayName: 'Use .NET Core sdk'
+    inputs:
+      version: $(dotnetSDK)
+  - task: DotNetCoreCLI@2
+    displayName: Restore
+    inputs:
+      command: restore
+      projects: $(restoreBuildProjects)
+      feedsToUse: config
+      nugetConfigPath: nuget.config
+  - task: DotNetCoreCLI@2
+    displayName: Build
+    inputs:
+      projects: $(restoreBuildProjects)
+      arguments: --configuration $(buildConfiguration)
+  - task: DotNetCoreCLI@2
+    displayName: Test
+    inputs:
+      command: test
+      projects: $(testProjects)
+      arguments: --configuration $(buildConfiguration)
