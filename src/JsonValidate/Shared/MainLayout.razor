@@ -1,29 +1,21 @@
 @inherits LayoutComponentBase
 
 <div class="main">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-2">
     <div class="container">
-        <a class="navbar-brand" href="#">JsonValidate</a>
+        <a class="navbar-brand" href="#">JsonValidate.net</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item py-0 active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-        </div>
     </div>
     </nav>
-    <div class="container">
+    <div class="container content px-4">
         @Body
     </div>
     <footer class="footer bg-light">
     <div class="container">
-        <p> © @DateTime.Now.Year JsonValidate · 
+        <p> © @DateTime.Now.Year JsonValidate.net · 
             <a href="/privacy">Privacy</a> · 
-            <a href="/terms">Terms</a> · 
             <a href="https://github.com/marcusturewicz/jsonvalidate.net"><i class="fab fa-github fa-lg"></i></a>
         </p>
     </div>
