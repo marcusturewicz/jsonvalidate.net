@@ -29,6 +29,7 @@ jobs:
     buildConfiguration: 'Release'
     restoreBuildProjects: '**/*.csproj'
     testProjects: '**/*Test.csproj'
+    publishProject: '**/JsonValidate.csproj'
     dotnetSDK: 3.0.100-preview5-011568
   steps:
   - checkout: self
@@ -53,3 +54,14 @@ jobs:
       command: test
       projects: $(testProjects)
       arguments: --configuration $(buildConfiguration)
+  - task: DotNetCoreCLI@2
+    displayName: Publish
+    inputs:
+      command: publish
+      projects: $(publishProject)
+      arguments: --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  - task: PublishBuildArtifacts@1
+    displayName: Artifacts
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+
