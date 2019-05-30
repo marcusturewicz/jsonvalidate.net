@@ -60,6 +60,8 @@ jobs:
       command: publish
       projects: $(publishProject)
       arguments: --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)
+      publishWebProjects: true
+      zipAfterPublish: false
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   - task: PublishBuildArtifacts@1
     displayName: Artifacts
