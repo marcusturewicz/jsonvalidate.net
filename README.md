@@ -1,4 +1,4 @@
-JsonValidate.net
+[JsonValidate.net](https://jsonvalidate.net)
 ============
 
 JSON Validator and Formatter website built with Blazor and .NET.
@@ -16,6 +16,6 @@ JSON Validator and Formatter website built with Blazor and .NET.
 
 Check out the [contributing](CONTRIBUTING.md) page to see the best places to log issues and our code of conduct.
 
-## Licence
+## License
 
-[MIT Licence](LICENCE)
+[MIT Licence](LICENSE)
