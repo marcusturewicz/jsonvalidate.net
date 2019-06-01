@@ -1,5 +1,4 @@
 @using Newtonsoft.Json
-@using Newtonsoft.Json.Linq
 
 <div>
     <div class="form-group">
@@ -32,7 +31,8 @@
 
     void Validate() {
         try {
-            Input = JValue.Parse(Input).ToString(Formatting.Indented);
+            var jObj = JsonConvert.DeserializeObject(Input);
+            Input = JsonConvert.SerializeObject(jObj, Formatting.Indented);
             IsError = false;
             Message = "JSON valid!";
         }
