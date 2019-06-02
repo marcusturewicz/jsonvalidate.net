@@ -1,7 +1,7 @@
 [JsonValidate.net](https://jsonvalidate.net)
 ============
 
-JSON Validator and Formatter website built with Blazor and .NET.
+JSON Validator and Formatter website built with Blazor and .NET
 
 ## Build status
 [![Build Status](https://dev.azure.com/marcusturewicz/jsonvalidate.net/_apis/build/status/marcusturewicz.jsonvalidate.net?branchName=master)](https://dev.azure.com/marcusturewicz/jsonvalidate.net/_build/latest?definitionId=3&branchName=master)
@@ -10,7 +10,7 @@ JSON Validator and Formatter website built with Blazor and .NET.
 
 1. To run the project, you'll need to setup your environment for Blazor. Easiest way is to follow steps 1-3 of the [Blazor docs](https://docs.microsoft.com/en-gb/aspnet/core/blazor/get-started?view=aspnetcore-3.0).
 2. Then you can run the project locally with:
-`dotnet run --project src/JsonValidate/JsonValidate.csproj`
+`dotnet watch run --project src/JsonValidate/JsonValidate.csproj`
 
 ## How to Contribute and Give Feedback
 
