@@ -12,6 +12,7 @@
 
   <ItemGroup>
       <Watch Include="**\*.razor"/>
+      <Watch Include="**\*.html"/>
   </ItemGroup>
 
   <ItemGroup>

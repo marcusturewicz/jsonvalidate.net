@@ -31,6 +31,9 @@
 
     void Validate() {
         try {
+            if (string.IsNullOrEmpty(Input) || string.IsNullOrWhiteSpace(Input)) {
+                throw new ArgumentException("Error: input was empty.");
+            }
             var jObj = JsonConvert.DeserializeObject(Input);
             Input = JsonConvert.SerializeObject(jObj, Formatting.Indented);
             IsError = false;
@@ -41,8 +44,9 @@
             Message = e.Message;
             var lineErrorStart = Message.IndexOf("line");
             var posErrorStart = Message.IndexOf("position");
-            LineError = int.Parse(Message.Substring(lineErrorStart + 5, (posErrorStart - 2 - lineErrorStart - 5)));
-            PosError = int.Parse(Message.Substring(posErrorStart + 9, (Message.Length - 1 - posErrorStart - 9)));
+            // For future line/position error handling
+            //LineError = int.Parse(Message.Substring(lineErrorStart + 5, (posErrorStart - 2 - lineErrorStart - 5)));
+            //PosError = int.Parse(Message.Substring(posErrorStart + 9, (Message.Length - 1 - posErrorStart - 9)));
         }
     }
 
