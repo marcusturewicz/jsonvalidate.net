@@ -3,8 +3,10 @@ trigger:
     include:
     - master
   paths:
-    exclude:
-    - README.md
+    include:
+    - src/*
+    - azure-pipelines.yml
+    - .gitignore
 
 pr:
   autoCancel: true
@@ -12,8 +14,10 @@ pr:
     include:
     - 'master'
   paths:
-    exclude:
-    - README.md
+    include:
+    - src/*
+    - azure-pipelines.yml
+    - .gitignore
 
 jobs:
 - job: blazor_app
