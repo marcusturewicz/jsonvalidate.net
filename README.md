@@ -1,3 +1,5 @@
+<img src="src/JsonValidate/wwwroot/images/logo.png" alt="jsonvalidate.net logo" height="75" />
+
 [JsonValidate.net](https://www.jsonvalidate.net)
 ============
 
