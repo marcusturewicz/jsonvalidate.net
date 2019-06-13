@@ -41,5 +41,12 @@
     <app>Loading...</app>
 
     <script src="_framework/blazor.webassembly.js"></script>
+    <script>
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker
+                   .register('./js/sw.js')
+                   .then(function() { console.log("Service Worker Registered"); });
+        }
+        </script>
 </body>
 </html>
