@@ -3,6 +3,7 @@ self.addEventListener('install', function(e) {
       caches.open('jsonvalidate').then(function(cache) {
         return cache.addAll([
         // Blazor files
+        '/',
         '/_framework/_bin/JsonValidate.dll',
         '/_framework/_bin/Microsoft.AspNetCore.Blazor.dll',
         '/_framework/_bin/Microsoft.AspNetCore.Components.Browser.dll',
