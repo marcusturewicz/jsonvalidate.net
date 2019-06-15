@@ -1,6 +1,6 @@
-self.addEventListener('install', function(e) {
+self.addEventListener('install', e => {
     e.waitUntil(
-      caches.open('jsonvalidate').then(function(cache) {
+      caches.open("jsonvalidate").then(cache => {
         return cache.addAll([
         // Blazor files
         '/',
@@ -43,7 +43,8 @@ self.addEventListener('install', function(e) {
         'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css',
         'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css',
         'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js'
-        ]);
+        ])
+            .then(() => self.skipWaiting());
       })
     );
    });
