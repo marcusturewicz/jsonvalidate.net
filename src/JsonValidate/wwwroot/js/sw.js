@@ -35,11 +35,22 @@ self.addEventListener('install', function(e) {
         '/images/logo.png',
         '/js/sw.js',
         '/favicon.ico',
-        '/index.html'
+        '/index.html',
+
+        // CDN files
+        'https://www.googletagmanager.com/gtag/js?id=UA-141223800-1',
+        'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css',
+        'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css',
+        'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js'
         ]);
       })
     );
    });
+
+self.addEventListener('activate', event => {
+    event.waitUntil(self.clients.claim());
+});
 
 self.addEventListener('fetch', function (event) {
     console.log(event.request.url);
