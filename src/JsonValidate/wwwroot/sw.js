@@ -33,7 +33,7 @@ self.addEventListener('install', e => {
        // Static files
        '/css/site.css',
        '/images/logo.png',
-       '/js/sw.js',
+       '/sw.js',
        '/favicon.ico',
        '/index.html',
 
