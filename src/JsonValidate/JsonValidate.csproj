@@ -16,9 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Blazor" Version="3.0.0-preview5-19227-01" />
-    <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="3.0.0-preview5-19227-01" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.AspNetCore.Blazor.DevServer" Version="3.0.0-preview5-19227-01" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor" Version="3.0.0-preview6-19253-01" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="3.0.0-preview6-19253-01" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.DevServer" Version="3.0.0-preview6-19253-01" PrivateAssets="all" />
     <PackageReference Include="System.Text.Json" Version="4.6.0-preview6.19259.10" />
   </ItemGroup>
 

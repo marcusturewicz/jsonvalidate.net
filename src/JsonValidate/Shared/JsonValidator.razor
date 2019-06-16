@@ -4,11 +4,11 @@
 <div>
     <div class="form-group">
         <label for="text">Enter JSON</label>
-        <textarea class="form-control" id="text" rows="12" bind="@Input"></textarea>
+        <textarea class="form-control" id="text" rows="12" @bind="@Input"></textarea>
     </div>
     <div class="form-group">
-        <button class="btn btn-primary" onclick="@Validate">Validate</button>
-        <button class="btn btn-secondary" onclick="@Clear">Clear</button>
+        <button class="btn btn-primary" @onclick="@Validate">Validate</button>
+        <button class="btn btn-secondary" @onclick="@Clear">Clear</button>
     </div>    
     @if (IsError)
     {
