@@ -1,6 +1,7 @@
+var cacheName = 'jsonvalidate';
 self.addEventListener('install', e => {
     e.waitUntil(
-      caches.open('jsonvalidate').then(cache => {
+      caches.open(cacheName).then(cache => {
         return cache.addAll([
        // Blazor files
        '/',
