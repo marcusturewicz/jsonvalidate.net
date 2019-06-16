@@ -1,20 +1,23 @@
 @inherits LayoutComponentBase
 
 <div class="main">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light py-2">
+    <header role="banner"></header>
+    <nav role="navigation" class="navbar navbar-expand-lg navbar-light bg-light py-2">
     <div class="container">
         <a class="navbar-brand" href="#"><img height="50rem" src="images/logo.png"/> JsonValidate.net</a>
     </div>
     </nav>
-    <div class="container content px-4">
-        @Body
-    </div>
-    <footer class="footer bg-light">
-    <div class="container">
-        <p> © @DateTime.Now.Year JsonValidate.net · 
-            <a href="/privacy">Privacy</a> · 
-            <a href="https://github.com/marcusturewicz/jsonvalidate.net"><i class="fab fa-github fa-lg"></i></a>
-        </p>
-    </div>
+    <main role="main">
+        <div class="container content px-4">
+            @Body
+        </div>
+    </main>
+    <footer role="contentinfo" class="footer bg-light">
+        <div class="container">
+            <p> © @DateTime.Now.Year JsonValidate.net · 
+                <a href="/privacy">Privacy</a> · 
+                <a href="https://github.com/marcusturewicz/jsonvalidate.net"><i class="fab fa-github fa-lg"></i></a>
+            </p>
+        </div>
     </footer>
 </div>
