@@ -1,5 +1,7 @@
 @using System.Text.Json
 @using System.Text.Json.Serialization
+@using JsonValidate.Clipboard
+@inject IJSRuntime JsRuntime;
 
 <div>
     <div class="form-group">
@@ -9,6 +11,7 @@
     <div class="form-group">
         <button class="btn btn-primary" @onclick="@Validate">Validate</button>
         <button class="btn btn-secondary" @onclick="@Clear">Clear</button>
+        <button class="btn btn-info" @onclick="@Copy">Copy</button>
     </div>    
     @if (IsError)
     {
@@ -23,7 +26,7 @@
     }
 </div>
 
-@functions {
+@code {
     string Input { get; set; }
     bool IsError { get; set; }
     string Message { get; set; }
@@ -56,5 +59,9 @@
         Input = string.Empty;
         IsError = false;
         Message = string.Empty;    
+    }
+
+    async void Copy() {
+        await Clipboard.WriteTextAsync(JsRuntime, Input);
     }
 }
