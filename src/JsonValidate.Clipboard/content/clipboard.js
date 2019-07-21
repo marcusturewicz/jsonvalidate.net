@@ -7,6 +7,7 @@ window.clipboard = {
       textArea.focus();
       textArea.select();
       document.execCommand('copy');
+      textArea.remove();
       return new Promise(() => {});
     }
     return navigator.clipboard.writeText(text);
