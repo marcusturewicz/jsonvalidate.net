@@ -1,5 +1,4 @@
 @using System.Text.Json
-@using System.Text.Json.Serialization
 @using JsonValidate.Clipboard
 @inject IJSRuntime JsRuntime;
 
@@ -39,8 +38,8 @@
             if (string.IsNullOrEmpty(Input) || string.IsNullOrWhiteSpace(Input)) {
                 throw new ArgumentException("Error: input was empty.");
             }
-            var jsonDoc = JsonDocument.Parse(Input).RootElement;
-            Input = JsonSerializer.ToString(jsonDoc, Options);
+            var jsonDoc = JsonSerializer.Deserialize<object>(Input);
+            Input = JsonSerializer.Serialize(jsonDoc, Options);
             IsError = false;
             Message = "JSON valid!";
         }

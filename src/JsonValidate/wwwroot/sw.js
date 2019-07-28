@@ -30,6 +30,7 @@ self.addEventListener('install', e => {
        '/_framework/blazor.boot.json',
        '/_framework/blazor.server.js',
        '/_framework/blazor.webassembly.js',
+       '/_content/JsonValidate.Clipboard/clipboard.js',
 
        // Static files
        '/css/site.css',
