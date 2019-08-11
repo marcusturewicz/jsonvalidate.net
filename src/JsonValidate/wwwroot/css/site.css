@@ -70,3 +70,7 @@ app {
     height: 60px;
     line-height: 60px;
 }
+
+.json-text {
+	font-family: monaco,Consolas,Lucida Console,monospace; 
+}
