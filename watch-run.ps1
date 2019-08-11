@@ -1,0 +1,1 @@
+dotnet watch --project $PSScriptRoot/src/JsonValidate/JsonValidate.csproj run

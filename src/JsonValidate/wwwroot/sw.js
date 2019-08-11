@@ -49,7 +49,6 @@ self.addEventListener('install', e => {
 
        // CDN files
        'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css',
-       'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css',
        'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css',
        'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js'
         ])
