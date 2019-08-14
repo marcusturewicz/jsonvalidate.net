@@ -1,4 +1,4 @@
-var cacheName = 'jsonvalidate';
+var cacheName = 'jsonvalidate-v2.0.0';
 self.addEventListener('install', e => {
     e.waitUntil(
       caches.open(cacheName).then(cache => {
@@ -7,7 +7,7 @@ self.addEventListener('install', e => {
        '/',
        '/_framework/_bin/JsonValidate.dll',
        '/_framework/_bin/Microsoft.AspNetCore.Blazor.dll',
-       '/_framework/_bin/Microsoft.AspNetCore.Components.Browser.dll',
+       '/_framework/_bin/Microsoft.AspNetCore.Components.Web.dll',
        '/_framework/_bin/Microsoft.AspNetCore.Components.dll',
        '/_framework/_bin/Microsoft.Extensions.DependencyInjection.Abstractions.dll',
        '/_framework/_bin/Microsoft.Extensions.DependencyInjection.dll',

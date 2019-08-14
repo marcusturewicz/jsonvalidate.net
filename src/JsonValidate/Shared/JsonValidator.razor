@@ -5,7 +5,7 @@
 <div>
     <div class="form-group">
         <label for="text">Enter JSON</label>
-        <textarea @ref="editor"></textarea>
+        <textarea @ref="editor" @ref:suppressField></textarea>
     </div>
     <div class="form-group">
         <button class="btn btn-primary" @onclick="@Validate">Validate</button>
@@ -31,7 +31,7 @@
     int LineError { get; set; }
     int PosError { get; set; }
     JsonSerializerOptions Options = new JsonSerializerOptions { WriteIndented = true };
-    ElementRef editor;
+    ElementReference editor;
     bool editorHasRendered;
 
     protected override void OnAfterRender() {
