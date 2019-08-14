@@ -28,6 +28,16 @@ namespace JsonValidate.JSInterop
             return ((IJSInProcessRuntime)jsRuntime).Invoke<string>(
                 "codemirror.setValue",
                 value);
-        }                       
+        }
+
+        public static object Highlight(IJSRuntime jsRuntime, int fromLine, int fromChar, int toLine, int toChar)
+        {
+            return ((IJSInProcessRuntime)jsRuntime).Invoke<object>(
+                "codemirror.highlight",
+                fromLine,
+                fromChar,
+                toLine,
+                toChar);
+        }                                  
     }
 }

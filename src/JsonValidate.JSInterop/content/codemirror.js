@@ -19,5 +19,11 @@ window.codemirror = {
     setValue: function (value) {
         cm.doc.setValue(value);
         return null;
-    }    
+    },
+    highlight: function (fromLine, fromChar, toLine, toChar)
+    {
+        cm.doc.markText({line: fromLine, ch: fromChar}, {line: toLine, ch: toChar}, {
+            css: "background: #81dee4"
+        })
+    }
 };

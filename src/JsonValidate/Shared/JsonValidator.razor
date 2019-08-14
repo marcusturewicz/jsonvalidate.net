@@ -1,6 +1,7 @@
 @using System.Text.Json
 @using JsonValidate.JSInterop
-@inject IJSRuntime JsRuntime;
+@inject IJSRuntime JsRuntime
+@using JsonValidate.Helpers
 
 <div>
     <div class="form-group">
@@ -8,9 +9,9 @@
         <textarea @ref="editor" @ref:suppressField></textarea>
     </div>
     <div class="form-group">
-        <button class="btn btn-primary" @onclick="@Validate">Validate</button>
-        <button class="btn btn-secondary" @onclick="@Clear">Clear</button>
-        <button class="btn btn-info" @onclick="@Copy">Copy</button>
+        <button class="btn btn-primary" @onclick="Validate">Validate</button>
+        <button class="btn btn-secondary" @onclick="Clear">Clear</button>
+        <button class="btn btn-info" @onclick="Copy">Copy</button>
     </div>    
     @if (IsError)
     {
@@ -42,7 +43,7 @@
     }
 
     void Validate() {
-        try {
+        try {            
             var input = CodeMirror.GetValue(JsRuntime);
             if (string.IsNullOrEmpty(input) || string.IsNullOrWhiteSpace(input)) {
                 throw new ArgumentException("Error: input was empty.");
@@ -56,11 +57,15 @@
         catch (Exception e) {
             IsError = true;
             Message = e.Message;
-            var lineErrorStart = Message.IndexOf("line");
-            var posErrorStart = Message.IndexOf("position");
-            // For future line/position error handling
-            //LineError = int.Parse(Message.Substring(lineErrorStart + 5, (posErrorStart - 2 - lineErrorStart - 5)));
-            //PosError = int.Parse(Message.Substring(posErrorStart + 9, (Message.Length - 1 - posErrorStart - 9)));
+            try {
+                var (line, pos) = ErrorHelper.ParseError(Message);
+                Console.WriteLine($"Line: {line}, Pos: {pos}");
+                CodeMirror.Highlight(JsRuntime, line, 0, line, 9999);
+            }
+            catch(Exception)
+            {
+                // Message did not contain line, pos
+            }
         }
     }
 
