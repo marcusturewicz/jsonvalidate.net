@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\JsonValidate.Clipboard\JsonValidate.Clipboard.csproj" />
+    <ProjectReference Include="..\JsonValidate.JSInterop\JsonValidate.JSInterop.csproj" />
   </ItemGroup>
 
 </Project>

@@ -30,7 +30,8 @@ self.addEventListener('install', e => {
        '/_framework/blazor.boot.json',
        '/_framework/blazor.server.js',
        '/_framework/blazor.webassembly.js',
-       '/_content/JsonValidate.Clipboard/clipboard.js',
+       '/_content/JsonValidate.JSInterop/clipboard.js',
+       '/_content/JsonValidate.JSInterop/codemirror.js',
 
        // Static files
        '/css/site.css',
@@ -50,7 +51,10 @@ self.addEventListener('install', e => {
        // CDN files
        'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css',
        'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css',
-       'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js'
+       'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js',
+       "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/codemirror.min.js",
+       "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/codemirror.min.css",
+       "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/javascript/javascript.min.js"
         ])
             .then(() => self.skipWaiting());
       })

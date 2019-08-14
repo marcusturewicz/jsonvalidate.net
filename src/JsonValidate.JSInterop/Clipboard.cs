@@ -1,7 +1,7 @@
 using Microsoft.JSInterop;
 using System.Threading.Tasks;
 
-namespace JsonValidate.Clipboard
+namespace JsonValidate.JSInterop
 {
     public class Clipboard
     {

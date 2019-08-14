@@ -71,6 +71,6 @@ app {
     line-height: 60px;
 }
 
-.json-text {
-	font-family: monaco,Consolas,Lucida Console,monospace; 
+.CodeMirror {
+    border: 2px solid #9e9c9c;
 }
