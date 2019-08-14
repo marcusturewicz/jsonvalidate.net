@@ -59,7 +59,6 @@
             Message = e.Message;
             try {
                 var (line, pos) = ErrorHelper.ParseError(Message);
-                Console.WriteLine($"Line: {line}, Pos: {pos}");
                 CodeMirror.Highlight(JsRuntime, line, 0, line, 9999);
             }
             catch(Exception)

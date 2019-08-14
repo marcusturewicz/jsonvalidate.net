@@ -1,4 +1,4 @@
-var cacheName = 'jsonvalidate-v2.0.0';
+var cacheName = 'jsonvalidate-v2.1.1';
 self.addEventListener('install', e => {
     e.waitUntil(
       caches.open(cacheName).then(cache => {
