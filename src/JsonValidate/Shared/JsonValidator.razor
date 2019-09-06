@@ -6,7 +6,7 @@
 <div>
     <div class="form-group">
         <label for="text">Enter JSON</label>
-        <textarea @ref="editor" @ref:suppressField></textarea>
+        <textarea @ref="editor"></textarea>
     </div>
     <div class="form-group">
         <button class="btn btn-primary" @onclick="Validate">Validate</button>
@@ -27,18 +27,16 @@
 </div>
 
 @code {
-    bool IsError { get; set; }
-    string Message { get; set; }
-    int LineError { get; set; }
-    int PosError { get; set; }
-    JsonSerializerOptions Options = new JsonSerializerOptions { WriteIndented = true };
-    ElementReference editor;
-    bool editorHasRendered;
+    public bool IsError { get; set; }
+    public string Message { get; set; }
+    public int LineError { get; set; }
+    public int PosError { get; set; }
+    public JsonSerializerOptions Options = new JsonSerializerOptions { WriteIndented = true };
+    public ElementReference editor;
 
-    protected override void OnAfterRender() {
-        if (!editorHasRendered) {
+    protected override void OnAfterRender(bool firstRender) {
+        if (firstRender) {
             CodeMirror.Create(JsRuntime, editor);
-            editorHasRendered = true;
         }
     }
 
