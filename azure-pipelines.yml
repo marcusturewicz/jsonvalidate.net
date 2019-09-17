@@ -34,7 +34,7 @@ jobs:
     restoreBuildProjects: '**/*.csproj'
     testProjects: '**/*Test.csproj'
     publishProject: '**/JsonValidate.csproj'
-    dotnetSDK: 3.0.100-preview9-014004
+    dotnetSDK: 3.0.100-rc1-014190
   steps:
   - checkout: self
     clean: true

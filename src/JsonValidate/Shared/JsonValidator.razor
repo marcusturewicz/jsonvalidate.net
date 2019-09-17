@@ -6,7 +6,7 @@
 <div>
     <div class="form-group">
         <label for="text">Enter JSON</label>
-        <textarea @ref="editor"></textarea>
+        <textarea @ref="Editor"></textarea>
     </div>
     <div class="form-group">
         <button class="btn btn-primary" @onclick="Validate">Validate</button>
@@ -32,11 +32,11 @@
     public int LineError { get; set; }
     public int PosError { get; set; }
     public JsonSerializerOptions Options = new JsonSerializerOptions { WriteIndented = true };
-    public ElementReference editor;
+    public ElementReference Editor;
 
     protected override void OnAfterRender(bool firstRender) {
         if (firstRender) {
-            CodeMirror.Create(JsRuntime, editor);
+            CodeMirror.Create(JsRuntime, Editor);
         }
     }
 
