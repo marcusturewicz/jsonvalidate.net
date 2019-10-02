@@ -66,3 +66,26 @@
 .CodeMirror {
     border: 2px solid #9e9c9c;
 }
+
+ /* Loading page styles
+  -------------------------------------------------- */
+.loading {
+  height: calc(100vh - 60px); /* 60px from the body margin */
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading .box {
+  width: 25vh;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #5ce1e6;
+}
+
+.loading .box img {
+  width: 20vh;
+}
