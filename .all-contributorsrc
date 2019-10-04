@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "andre000",
+      "name": "André Adriano",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/16901251?v=4",
+      "profile": "http://linkedin.com/in/andreadriano/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "jsonvalidate.net",
+  "projectOwner": "marcusturewicz",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
