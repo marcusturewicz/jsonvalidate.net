@@ -1,4 +1,3 @@
-
 namespace JsonValidate.Helpers
 {
     public class ErrorHelper
