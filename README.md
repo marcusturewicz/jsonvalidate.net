@@ -7,7 +7,7 @@ JSON Validator and Formatter website built with Blazor and .NET
 
 [![Build Status](https://dev.azure.com/marcusturewicz/jsonvalidate.net/_apis/build/status/marcusturewicz.jsonvalidate.net?branchName=master)](https://dev.azure.com/marcusturewicz/jsonvalidate.net/_build/latest?definitionId=3&branchName=master)
 [![CodeFactor](https://www.codefactor.io/repository/github/marcusturewicz/jsonvalidate.net/badge)](https://www.codefactor.io/repository/github/marcusturewicz/jsonvalidate.net)
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 ## Get Started
 
@@ -28,6 +28,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="http://linkedin.com/in/andreadriano/"><img src="https://avatars2.githubusercontent.com/u/16901251?v=4" width="100px;" alt="André Adriano"/><br /><sub><b>André Adriano</b></sub></a><br /><a href="https://github.com/marcusturewicz/jsonvalidate.net/commits?author=andre000" title="Code">💻</a></td>
+    <td align="center"><a href="http://www.blueocto.co.uk"><img src="https://avatars1.githubusercontent.com/u/1690478?v=4" width="100px;" alt="Caroline Hagan"/><br /><sub><b>Caroline Hagan</b></sub></a><br /><a href="https://github.com/marcusturewicz/jsonvalidate.net/commits?author=blueocto" title="Code">💻</a></td>
   </tr>
 </table>
 
