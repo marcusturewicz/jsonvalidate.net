@@ -89,3 +89,12 @@
 .loading .box img {
   width: 20vh;
 }
+
+ /* Accessibility fixes
+  -------------------------------------------------- */
+
+/* Contrast */
+.btn-info {
+  background-color: hsl(188,78%,32.5%);
+  border-color: hsl(188,78%,32.5%);
+}
