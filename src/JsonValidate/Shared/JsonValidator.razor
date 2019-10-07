@@ -9,9 +9,9 @@
         <textarea @ref="Editor" id="textInput"></textarea>
     </div>
     <div class="form-group">
-        <button class="btn btn-primary" @onclick="Validate">Validate</button>
-        <button class="btn btn-secondary" @onclick="Clear">Clear</button>
-        <button class="btn btn-info" @onclick="Copy">Copy</button>
+        <button class="btn btn-primary" aria-label="Validate JSON" @onclick="Validate">Validate</button>
+        <button class="btn btn-secondary" aria-label="Clear JSON" @onclick="Clear">Clear</button>
+        <button class="btn btn-info" aria-label="Copy JSON" @onclick="Copy">Copy</button>
     </div>    
     @if (IsError)
     {
