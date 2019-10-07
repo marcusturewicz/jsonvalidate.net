@@ -22,6 +22,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "paulgaumer",
+      "name": "Paul Gaumer",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/17173804?v=4",
+      "profile": "https://paulgaumer.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
