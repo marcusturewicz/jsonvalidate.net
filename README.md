@@ -7,7 +7,7 @@ JSON Validator and Formatter website built with Blazor and .NET
 
 [![Build Status](https://dev.azure.com/marcusturewicz/jsonvalidate.net/_apis/build/status/marcusturewicz.jsonvalidate.net?branchName=master)](https://dev.azure.com/marcusturewicz/jsonvalidate.net/_build/latest?definitionId=3&branchName=master)
 [![CodeFactor](https://www.codefactor.io/repository/github/marcusturewicz/jsonvalidate.net/badge)](https://www.codefactor.io/repository/github/marcusturewicz/jsonvalidate.net)
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors)
 
 ## Get Started
 
@@ -32,6 +32,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://paulgaumer.com"><img src="https://avatars3.githubusercontent.com/u/17173804?v=4" width="100px;" alt="Paul Gaumer"/><br /><sub><b>Paul Gaumer</b></sub></a><br /><a href="https://github.com/marcusturewicz/jsonvalidate.net/commits?author=paulgaumer" title="Code">💻</a></td>
     <td align="center"><a href="https://christaweaver.com"><img src="https://avatars0.githubusercontent.com/u/16121690?v=4" width="100px;" alt="Christa"/><br /><sub><b>Christa</b></sub></a><br /><a href="https://github.com/marcusturewicz/jsonvalidate.net/commits?author=cweave" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/souravdasslg"><img src="https://avatars3.githubusercontent.com/u/9268592?v=4" width="100px;" alt="Sourav Das"/><br /><sub><b>Sourav Das</b></sub></a><br /><a href="https://github.com/marcusturewicz/jsonvalidate.net/commits?author=souravdasslg" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Pr0ftR3gret"><img src="https://avatars0.githubusercontent.com/u/54450869?v=4" width="100px;" alt="Pr0ftR3gret"/><br /><sub><b>Pr0ftR3gret</b></sub></a><br /><a href="https://github.com/marcusturewicz/jsonvalidate.net/commits?author=Pr0ftR3gret" title="Code">💻</a></td>
   </tr>
 </table>
 
