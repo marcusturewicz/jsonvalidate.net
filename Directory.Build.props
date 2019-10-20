@@ -1,0 +1,12 @@
+<Project>
+    <PropertyGroup>
+        <!-- Source versions -->
+        <AspNetCoreVersion>3.1.0-preview1.19508.20</AspNetCoreVersion>
+        <BlazorVersion>3.1.0-preview1.19508.20</BlazorVersion>
+        <SystemTextJsonVersion>4.7.0-preview1.19504.10</SystemTextJsonVersion>
+        <!-- Test version -->
+        <MicrosoftNETTestSdkVersion>16.3.0</MicrosoftNETTestSdkVersion>
+        <xunitVersion>2.4.1</xunitVersion>
+        <xunitRunnerVisualStudioVersion>2.4.1</xunitRunnerVisualStudioVersion>
+    </PropertyGroup>
+</Project>
