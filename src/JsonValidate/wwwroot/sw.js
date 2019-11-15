@@ -1,4 +1,4 @@
-var cacheName = 'jsonvalidate-v2.6.1';
+var cacheName = 'jsonvalidate-v2.6.2';
 self.addEventListener('install', e => {
     e.waitUntil(
       caches.open(cacheName).then(cache => {
@@ -23,7 +23,6 @@ self.addEventListener('install', e => {
        '/_framework/_bin/System.Net.Http.dll',
        '/_framework/_bin/System.Numerics.Vectors.dll',
        '/_framework/_bin/System.Runtime.CompilerServices.Unsafe.dll',
-       '/_framework/_bin/System.Text.Json.dll',
        '/_framework/_bin/System.Threading.Tasks.Extensions.dll',
        '/_framework/wasm/mono.js',
        '/_framework/wasm/mono.wasm',

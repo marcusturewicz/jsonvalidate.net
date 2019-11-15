@@ -15,7 +15,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Blazor" Version="$(BlazorVersion)" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="$(BlazorVersion)" PrivateAssets="all" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.DevServer" Version="$(BlazorVersion)" PrivateAssets="all" />
-    <PackageReference Include="System.Text.Json" Version="$(SystemTextJsonVersion)" />
   </ItemGroup>
 
   <ItemGroup>
