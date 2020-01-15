@@ -1,7 +1,7 @@
 <Project>
     <PropertyGroup>
         <!-- Source versions -->
-        <AspNetCoreVersion>3.1.0</AspNetCoreVersion>
+        <AspNetCoreVersion>3.1.1</AspNetCoreVersion>
         <BlazorVersion>3.1.0-preview4.19579.2</BlazorVersion>
         <!-- Test version -->
         <MicrosoftNETTestSdkVersion>16.3.0</MicrosoftNETTestSdkVersion>
