@@ -2,7 +2,7 @@
     <PropertyGroup>
         <!-- Source versions -->
         <AspNetCoreVersion>3.1.1</AspNetCoreVersion>
-        <BlazorVersion>3.1.0-preview4.19579.2</BlazorVersion>
+        <BlazorVersion>3.2.0-preview1.20073.1</BlazorVersion>
         <!-- Test version -->
         <MicrosoftNETTestSdkVersion>16.3.0</MicrosoftNETTestSdkVersion>
         <xunitVersion>2.4.1</xunitVersion>
