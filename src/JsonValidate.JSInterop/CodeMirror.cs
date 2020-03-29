@@ -1,38 +1,39 @@
+using System.Threading.Tasks;
 using Microsoft.JSInterop;
 
 namespace JsonValidate.JSInterop
 {
     public class CodeMirror
     {
-        public static object Create(IJSRuntime jsRuntime, object textArea)
+        public static ValueTask<object> Create(IJSRuntime jsRuntime, object textArea)
         {
-            return ((IJSInProcessRuntime)jsRuntime).Invoke<object>(
+            return jsRuntime.InvokeAsync<object>(
                 "codemirror.create",
                 textArea);
         } 
 
-        public static object Clear(IJSRuntime jsRuntime)
+        public static ValueTask<object> Clear(IJSRuntime jsRuntime)
         {
-            return ((IJSInProcessRuntime)jsRuntime).Invoke<object>(
+            return jsRuntime.InvokeAsync<object>(
                 "codemirror.clear");
         }   
 
-        public static string GetValue(IJSRuntime jsRuntime)
+        public static ValueTask<string> GetValue(IJSRuntime jsRuntime)
         {
-            return ((IJSInProcessRuntime)jsRuntime).Invoke<string>(
+            return jsRuntime.InvokeAsync<string>(
                 "codemirror.getValue");
         }  
 
-        public static string SetValue(IJSRuntime jsRuntime, string value)
+        public static ValueTask<string> SetValue(IJSRuntime jsRuntime, string value)
         {
-            return ((IJSInProcessRuntime)jsRuntime).Invoke<string>(
+            return jsRuntime.InvokeAsync<string>(
                 "codemirror.setValue",
                 value);
         }
 
-        public static object Highlight(IJSRuntime jsRuntime, int fromLine, int fromChar, int toLine, int toChar)
+        public static ValueTask<object> Highlight(IJSRuntime jsRuntime, int fromLine, int fromChar, int toLine, int toChar)
         {
-            return ((IJSInProcessRuntime)jsRuntime).Invoke<object>(
+            return jsRuntime.InvokeAsync<object>(
                 "codemirror.highlight",
                 fromLine,
                 fromChar,

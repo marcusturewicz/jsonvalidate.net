@@ -34,21 +34,21 @@
     public JsonSerializerOptions Options = new JsonSerializerOptions { WriteIndented = true };
     public ElementReference Editor;
 
-    protected override void OnAfterRender(bool firstRender) {
+    protected override async Task OnAfterRenderAsync(bool firstRender) {
         if (firstRender) {
-            CodeMirror.Create(JsRuntime, Editor);
+            await CodeMirror.Create(JsRuntime, Editor);
         }
     }
 
-    void Validate() {
+    async Task Validate() {
         try {            
-            var input = CodeMirror.GetValue(JsRuntime);
+            var input = await CodeMirror.GetValue(JsRuntime);
             if (string.IsNullOrEmpty(input) || string.IsNullOrWhiteSpace(input)) {
                 throw new ArgumentException("Error: input was empty.");
             }
             var jsonDoc = JsonSerializer.Deserialize<object>(input);
             var newInput = JsonSerializer.Serialize(jsonDoc, Options);
-            CodeMirror.SetValue(JsRuntime, newInput);
+            await CodeMirror.SetValue(JsRuntime, newInput);
             IsError = false;
             Message = "JSON valid!";
         }
@@ -57,7 +57,7 @@
             Message = e.Message;
             try {
                 var (line, pos) = ErrorHelper.ParseError(Message);
-                CodeMirror.Highlight(JsRuntime, line, 0, line, 9999);
+                await CodeMirror.Highlight(JsRuntime, line, 0, line, 9999);
             }
             catch(Exception)
             {
@@ -66,14 +66,14 @@
         }
     }
 
-    void Clear() {
-        CodeMirror.Clear(JsRuntime);
+    async Task Clear() {
+        await CodeMirror.Clear(JsRuntime);
         IsError = false;
         Message = string.Empty;    
     }
 
-    async void Copy() {
-        var input = CodeMirror.GetValue(JsRuntime);
+    async Task Copy() {
+        var input = await CodeMirror.GetValue(JsRuntime);
         await Clipboard.WriteTextAsync(JsRuntime, input);
     }
 }
