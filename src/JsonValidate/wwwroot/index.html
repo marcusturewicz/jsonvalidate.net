@@ -78,17 +78,7 @@
             </div>
         </div>
     </app>
-    <script src="_framework/blazor.webassembly.js"></script> 
-    <script>
-        if('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./sw.js', { scope: "./"})
-                .then(function(registration) {
-                    console.log('Service Worker Registered');
-                });
-            navigator.serviceWorker.ready.then(function(registration) {
-                console.log('Service Worker Ready');
-            });
-        }
-    </script>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script>navigator.serviceWorker.register('service-worker.js');</script>
 </body>
 </html>
