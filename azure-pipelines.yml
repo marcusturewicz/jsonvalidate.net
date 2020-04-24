@@ -70,4 +70,3 @@ jobs:
   - task: PublishBuildArtifacts@1
     displayName: Artifacts
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
-
