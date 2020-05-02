@@ -38,7 +38,7 @@ jobs:
   steps:
   - checkout: self
     clean: true
-  - task: DotNetCoreInstaller@0
+  - task: DotNetCoreInstaller@1
     displayName: 'Use .NET Core sdk'
     inputs:
       version: $(dotnetSDK)
