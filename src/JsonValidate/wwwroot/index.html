@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>JSON Validate - JSON Validator and Formatter</title>    
+    <title>JSON Validate - JSON Validator and Formatter</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141223800-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'UA-141223800-1');
     </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name='description' content=
-        'JSON Validate is the free online/offline validator and formatter tool for JSON (JavaScript Object Notation).'>    
-    <meta name="theme-color" content="#81DEE4"/>
+    <meta name='description' content='JSON Validate is the free online/offline validator and formatter tool for JSON (JavaScript Object Notation).'>
+    <meta name="theme-color" content="#81DEE4" />
     <link rel='canonical' href='https://www.jsonvalidate.net/'>
     <meta name='mobile-web-app-capable' content='yes'>
     <meta name='apple-mobile-web-app-capable' content='yes'>
@@ -39,35 +38,38 @@
     <base href="/" />
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
     <link href="css/site.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
     <script async src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/codemirror.min.js" integrity="sha256-uK6j71U9ymYrRIqjU7kDGGudavJyAoHV6cdNgpcoymM=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/codemirror.min.css" integrity="sha256-I8NyGs4wjbMuBSUE40o55W6k6P7tu/7G28/JGUUYCIs=" crossorigin="anonymous" />    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/javascript/javascript.min.js" integrity="sha256-7AjEsHnW7cpq2raC/uxnGCP2G4zIKmCdz7OAv6LN00o=" crossorigin="anonymous"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.50.2/codemirror.min.js" integrity="sha256-rdi8oE6Z5spj3j8D8tG0qx8bNXgnKjw3zU2PrGBy3AE=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.50.2/codemirror.min.css" integrity="sha256-aUkU60JHknIp4cZ37K3nZ0qln+bxL5FIMzOUCjLJzfg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.50.2/theme/oceanic-next.min.css" integrity="sha256-FiiPKnUpLbhrVkzwmDCiXp+j2Or6GClrghlNrhKMksQ=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.50.2/mode/javascript/javascript.min.js" integrity="sha256-VNJ6ASCktgY+YWSwWrZVdMKbqyAIY7fys5Yckd8Ij7E=" crossorigin="anonymous"></script>
     <script src="_content/JsonValidate.JSInterop/clipboard.js"></script>
-    <script src="_content/JsonValidate.JSInterop/codemirror.js"></script>    
+    <script src="_content/JsonValidate.JSInterop/codemirror.js"></script>
     <script>
-        window.addEventListener("load", function(){
-        window.cookieconsent.initialise({
-        "palette": {
-            "popup": {
-                "background": "#edeff5",
-            "text": "#212529"
-            },
-            "button": {
-            "background": "#1b6ec2"
-            }
-        },
-        "theme": "classic",
-        "position": "bottom-right",
-        "content": {
-            "href": "/privacy"
-        }
-        })});
+        window.addEventListener("load", function () {
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#edeff5",
+                        "text": "#212529"
+                    },
+                    "button": {
+                        "background": "#1b6ec2"
+                    }
+                },
+                "theme": "classic",
+                "position": "bottom-right",
+                "content": {
+                    "href": "/privacy"
+                }
+            })
+        });
     </script>
     <noscript>
-            JavaScript is disabled. JavaScript must be enabled for this site to work correctly.
+        JavaScript is disabled. JavaScript must be enabled for this site to work correctly.
     </noscript>
 </head>
 <body>

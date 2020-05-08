@@ -24,7 +24,7 @@ namespace JsonValidate.Test
         {
             var cut = RenderComponent<JsonValidator>();
             cut.Find("button.btn.btn-primary").Click();
-            Assert.Equal("Error: input was empty.", CleanString(cut.Find("div.alert.alert-danger").TextContent));
+            Assert.Equal("😕 Error: input was empty...", CleanString(cut.Find("div.alert.alert-danger").TextContent));
         }
 
         [Fact]
@@ -37,7 +37,7 @@ namespace JsonValidate.Test
             cut.Find("button.btn.btn-secondary").Click();
             // Error message is cleared
             Assert.Throws<ElementNotFoundException>(() => cut.Find("div.alert.alert-danger"));
-        }             
+        }
 
         private string CleanString(string input)
         {

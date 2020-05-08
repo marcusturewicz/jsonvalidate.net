@@ -7,7 +7,6 @@ window.codemirror = {
             lineNumbers: true,
             tabSize: 2
         });
-        return null;
     },
     clear: function () {
         cm.doc.setValue('');
@@ -18,12 +17,13 @@ window.codemirror = {
     },
     setValue: function (value) {
         cm.doc.setValue(value);
-        return null;
     },
-    highlight: function (fromLine, fromChar, toLine, toChar)
-    {
-        cm.doc.markText({line: fromLine, ch: fromChar}, {line: toLine, ch: toChar}, {
-            css: "background: #81dee4"
+    setOption: function (key, value) {
+        cm.setOption(key, value);
+    },
+    highlight: function (fromLine, fromChar, toLine, toChar, isLightTheme) {
+        cm.doc.markText({ line: fromLine, ch: fromChar }, { line: toLine, ch: toChar }, {
+            css: `background: ${isLightTheme ? '#81dee4' : '#7E211B'}`
         })
     }
 };

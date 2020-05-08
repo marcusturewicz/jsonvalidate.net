@@ -3,18 +3,27 @@
 @inject IJSRuntime JsRuntime
 @using JsonValidate.Helpers
 
-<div>
+<div class="pb-2">
     <div class="form-group">
         <label for="textInput">Enter JSON</label>
         <textarea @ref="Editor" id="textInput"></textarea>
     </div>
     <div class="form-group">
-        <button class="btn btn-primary" aria-label="Validate JSON" @onclick="Validate">Validate</button>
-        <button class="btn btn-secondary" aria-label="Clear JSON" @onclick="Clear">Clear</button>
-        <button class="btn btn-info" aria-label="Copy JSON" @onclick="Copy">Copy</button>
-    </div>    
-    @if (IsError)
-    {
+        <button class="btn btn-primary" aria-label="Validate JSON" @onclick="TryValidate"><span class="oi oi-check pr-2" aria-hidden="true"></span>  Validate</button>
+        <button class="btn btn-secondary" aria-label="Clear JSON" @onclick="Clear"><span class="oi oi-trash pr-2" aria-hidden="true"></span> Clear</button>
+        <button class="btn btn-info copy-btn" aria-label="Copy JSON" @onclick="Copy"><span class="oi oi-clipboard pr-2" aria-hidden="true"></span> Copy</button>
+        <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+            <label class="@(ActiveBottonCss(true))">
+                <input type="radio" @onclick="@(async () => await ToggleTheme(true))"
+                       autocomplete="off"> Light
+            </label>
+            <label class="@(ActiveBottonCss(false))">
+                <input type="radio" @onclick="@(async () => await ToggleTheme(false))"
+                       autocomplete="off"> Dark
+            </label>
+        </div>
+    </div>
+    @if (IsError) {
         <div class="alert alert-danger" role="alert">
             @Message
         </div>
@@ -28,52 +37,80 @@
 
 @code {
     public bool IsError { get; set; }
-    public string Message { get; set; }
+    public string? Message { get; set; }
     public int LineError { get; set; }
     public int PosError { get; set; }
     public JsonSerializerOptions Options = new JsonSerializerOptions { WriteIndented = true };
     public ElementReference Editor;
+    public bool IsLightTheme { get; set; } = true;
+
+    string ActiveBottonCss(bool isLightButton) {
+        return $"btn btn-secondary {((isLightButton && IsLightTheme) ? "active" : (!isLightButton && !IsLightTheme) ? "active" : "")}";
+    }
 
     protected override async Task OnAfterRenderAsync(bool firstRender) {
         if (firstRender) {
-            await CodeMirror.Create(JsRuntime, Editor);
+            await CodeMirror.CreateAsync(JsRuntime, Editor);
         }
     }
 
-    async Task Validate() {
-        try {            
-            var input = await CodeMirror.GetValue(JsRuntime);
-            if (string.IsNullOrEmpty(input) || string.IsNullOrWhiteSpace(input)) {
-                throw new ArgumentException("Error: input was empty.");
+    async Task TryValidate() {
+        try {
+            var (isError, input) = await TryGetInput();
+            if (isError) {
+                return;
             }
+
             var jsonDoc = JsonSerializer.Deserialize<object>(input);
             var newInput = JsonSerializer.Serialize(jsonDoc, Options);
-            await CodeMirror.SetValue(JsRuntime, newInput);
+            await CodeMirror.SetValueAsync(JsRuntime, newInput);
             IsError = false;
-            Message = "JSON valid!";
+            Message = "🤓 The JSON is valid!";
         }
         catch (Exception e) {
             IsError = true;
-            Message = e.Message;
-            try {
-                var (line, pos) = ErrorHelper.ParseError(Message);
-                await CodeMirror.Highlight(JsRuntime, line, 0, line, 9999);
-            }
-            catch(Exception)
-            {
-                // Message did not contain line, pos
-            }
+            Message = $"😥 Error: {e.Message}";
+            await TrySetHighlightWhenError();
         }
     }
 
+    async ValueTask TrySetHighlightWhenError() {
+        try
+        {
+            if (IsError && !string.IsNullOrWhiteSpace(Message)) {
+                var (line, pos) = ErrorHelper.ParseError(Message);
+                await CodeMirror.HighlightAsync(JsRuntime, line, 0, line, 9999, IsLightTheme);
+            }
+        }
+        catch (Exception)
+        {
+            // Message did not contain line, pos
+        }
+    }
+
+    async ValueTask<(bool isError, string? input)> TryGetInput() {
+        var input = await CodeMirror.GetValueAsync(JsRuntime);
+        if (IsError = string.IsNullOrWhiteSpace(input)) {
+            Message = "😕 Error: input was empty...";
+        }
+
+        return (IsError, input);
+    }
+
     async Task Clear() {
-        await CodeMirror.Clear(JsRuntime);
+        await CodeMirror.ClearAsync(JsRuntime);
         IsError = false;
-        Message = string.Empty;    
+        Message = string.Empty;
     }
 
     async Task Copy() {
-        var input = await CodeMirror.GetValue(JsRuntime);
+        var input = await CodeMirror.GetValueAsync(JsRuntime);
         await Clipboard.WriteTextAsync(JsRuntime, input);
+    }
+
+    async Task ToggleTheme(bool isLight) {
+        await CodeMirror.SetOptionAsync(JsRuntime, "theme", (IsLightTheme = isLight) ? "default" : "oceanic-next");
+        await TrySetHighlightWhenError();
+        StateHasChanged();
     }
 }

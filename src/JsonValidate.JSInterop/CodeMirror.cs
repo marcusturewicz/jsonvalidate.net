@@ -5,40 +5,39 @@ namespace JsonValidate.JSInterop
 {
     public class CodeMirror
     {
-        public static ValueTask<object> Create(IJSRuntime jsRuntime, object textArea)
-        {
-            return jsRuntime.InvokeAsync<object>(
+        public static ValueTask CreateAsync(IJSRuntime jsRuntime, object textArea) =>
+            jsRuntime.InvokeVoidAsync(
                 "codemirror.create",
                 textArea);
-        } 
 
-        public static ValueTask<object> Clear(IJSRuntime jsRuntime)
-        {
-            return jsRuntime.InvokeAsync<object>(
+        public static ValueTask ClearAsync(IJSRuntime jsRuntime) =>
+            jsRuntime.InvokeVoidAsync(
                 "codemirror.clear");
-        }   
 
-        public static ValueTask<string> GetValue(IJSRuntime jsRuntime)
-        {
-            return jsRuntime.InvokeAsync<string>(
+        public static ValueTask<string> GetValueAsync(IJSRuntime jsRuntime) =>
+            jsRuntime.InvokeAsync<string>(
                 "codemirror.getValue");
-        }  
 
-        public static ValueTask<string> SetValue(IJSRuntime jsRuntime, string value)
-        {
-            return jsRuntime.InvokeAsync<string>(
+        public static ValueTask SetValueAsync(IJSRuntime jsRuntime, string value) =>
+            jsRuntime.InvokeVoidAsync(
                 "codemirror.setValue",
                 value);
-        }
 
-        public static ValueTask<object> Highlight(IJSRuntime jsRuntime, int fromLine, int fromChar, int toLine, int toChar)
-        {
-            return jsRuntime.InvokeAsync<object>(
+        public static ValueTask SetOptionAsync(IJSRuntime jsRuntime, string key, string value) =>
+            jsRuntime.InvokeVoidAsync(
+                "codemirror.setOption",
+                key,
+                value);
+
+        public static ValueTask HighlightAsync(
+            IJSRuntime jsRuntime, int fromLine, int fromChar, 
+            int toLine, int toChar, bool isLightTheme) =>
+            jsRuntime.InvokeVoidAsync(
                 "codemirror.highlight",
                 fromLine,
                 fromChar,
                 toLine,
-                toChar);
-        }                                  
+                toChar,
+                isLightTheme);
     }
 }
