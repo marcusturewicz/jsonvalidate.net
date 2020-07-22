@@ -1,5 +1,5 @@
 using Bunit;
-using Bunit.Mocking.JSInterop;
+using Bunit.TestDoubles.JSInterop;
 using JsonValidate.Shared;
 using Xunit;
 
@@ -9,7 +9,7 @@ namespace JsonValidate.Test
     {
         public JsonValidateTests()
         {
-            Services.AddMockJsRuntime();
+            Services.AddMockJSRuntime();
         }
 
         [Fact]

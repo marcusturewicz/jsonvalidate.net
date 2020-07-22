@@ -20,7 +20,7 @@ pr:
     - .gitignore
 
 jobs:
-- job: blazor_app
+- job: BlazorApp
   displayName: Blazor App
   timeoutInMinutes: 15
   workspace:
@@ -34,14 +34,17 @@ jobs:
     restoreBuildProjects: '**/*.csproj'
     testProjects: '**/*Test.csproj'
     publishProject: '**/JsonValidate.csproj'
-    dotnetSDK: 3.1.300
+    dotnetSDK: "5.0.x"
   steps:
   - checkout: self
     clean: true
-  - task: DotNetCoreInstaller@1
+  - task: UseDotNet@2
     displayName: 'Use .NET Core sdk'
     inputs:
+      packageType: sdk
       version: $(dotnetSDK)
+      installationPath: $(Agent.ToolsDirectory)/dotnet
+      includePreviewVersions: true
   - task: DotNetCoreCLI@2
     displayName: Restore
     inputs:
