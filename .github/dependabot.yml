@@ -7,7 +7,7 @@ updates:
   - package-ecosystem: "nuget"
     directory: "/src/JsonValidate.JSInterop"
     schedule:
-      interval: "weekly"      
+      interval: "weekly"
   - package-ecosystem: "nuget"
     directory: "/test/JsonValidate.Test"
     schedule:
