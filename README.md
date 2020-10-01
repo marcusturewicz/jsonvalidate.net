@@ -37,6 +37,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/Pr0ftR3gret"><img src="https://avatars0.githubusercontent.com/u/54450869?v=4" width="100px;" alt=""/><br /><sub><b>Pr0ftR3gret</b></sub></a><br /><a href="https://github.com/marcusturewicz/jsonvalidate.net/commits?author=Pr0ftR3gret" title="Code">💻</a></td>
     <td align="center"><a href="https://www.microsoft.com"><img src="https://avatars0.githubusercontent.com/u/7679720?v=4" width="100px;" alt=""/><br /><sub><b>David Pine</b></sub></a><br /><a href="https://github.com/marcusturewicz/jsonvalidate.net/commits?author=IEvangelist" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/felipedotcom"><img src="https://avatars0.githubusercontent.com/u/34682439?v=4" width="100px;" alt=""/><br /><sub><b>Felipe Rodolfo</b></sub></a><br /><a href="https://github.com/marcusturewicz/jsonvalidate.net/commits?author=felipedotcom" title="Code">💻</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->
