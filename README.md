@@ -7,7 +7,6 @@ JSON Validator and Formatter website built with Blazor and .NET
 
 [![Build Status](https://dev.azure.com/marcusturewicz/jsonvalidate.net/_apis/build/status/marcusturewicz.jsonvalidate.net?branchName=main)](https://dev.azure.com/marcusturewicz/jsonvalidate.net/_build/latest?definitionId=3&branchName=main)
 [![CodeFactor](https://www.codefactor.io/repository/github/marcusturewicz/jsonvalidate.net/badge)](https://www.codefactor.io/repository/github/marcusturewicz/jsonvalidate.net)
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors)
 
 ## Get Started
 
