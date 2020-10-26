@@ -1,8 +1,8 @@
 <Project>
     <PropertyGroup>
         <!-- Source versions -->
-        <AspNetCoreVersion> 5.0.0-rc.1.*</AspNetCoreVersion>
-        <BlazorVersion> 5.0.0-rc.1.*</BlazorVersion>
+        <AspNetCoreVersion> 5.0.0-rc.2.*</AspNetCoreVersion>
+        <BlazorVersion> 5.0.0-rc.2.*</BlazorVersion>
         <!-- Test version -->
         <MicrosoftNETTestSdkVersion>16.3.0</MicrosoftNETTestSdkVersion>
         <xunitVersion>2.4.1</xunitVersion>
