@@ -1,11 +1,12 @@
 <Project>
     <PropertyGroup>
         <!-- Source versions -->
-        <AspNetCoreVersion> 5.0.0-rc.2.*</AspNetCoreVersion>
-        <BlazorVersion> 5.0.0-rc.2.*</BlazorVersion>
+        <AspNetCoreVersion>5.0.0</AspNetCoreVersion>
+        <BlazorVersion>5.0.0</BlazorVersion>
         <!-- Test version -->
         <MicrosoftNETTestSdkVersion>16.3.0</MicrosoftNETTestSdkVersion>
         <xunitVersion>2.4.1</xunitVersion>
         <xunitRunnerVisualStudioVersion>2.4.1</xunitRunnerVisualStudioVersion>
+        <bunitVersion>1.0.0-beta-11</bunitVersion>
     </PropertyGroup>
 </Project>
