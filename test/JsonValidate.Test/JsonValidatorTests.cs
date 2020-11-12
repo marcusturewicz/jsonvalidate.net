@@ -1,5 +1,5 @@
 using Bunit;
-using Bunit.TestDoubles.JSInterop;
+using Bunit.TestDoubles;
 using JsonValidate.Shared;
 using Xunit;
 
